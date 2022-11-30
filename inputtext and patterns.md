@@ -1,11 +1,11 @@
 #text - pattern
-abaraccadabra -ara
+abracadabra  -rac
 jim jam gym  - jam
 test case - test
 bluetooth head set - head
 iphone smart phone - art
-water inside water bottle - side
+water inside  bottle - side
 big brown table - own
-not north part of america - not
+not north part - not
 fastest algo - fast
 notice board - not
