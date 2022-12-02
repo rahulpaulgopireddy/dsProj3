@@ -1,6 +1,5 @@
 [
   {
-  {
     "stringText": "abracadabra",
     "pattern": "rac"
   },
@@ -39,5 +38,9 @@
   {
     "stringText": "notice board",
     "pattern": "ice"
+  },
+  {
+    "stringText": "test case",
+    "pattern": "test"
   }
 ]
