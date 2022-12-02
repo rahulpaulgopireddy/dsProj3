@@ -1,4 +1,4 @@
-import inputData from "./sample.json" assert { type: "json" };
+import inputData from "./inputdata.json" assert { type: "json" };
 
 inputData.forEach((element, index) => {
   var startTime = performance.now();

@@ -1,13 +1,11 @@
-import inputData from "./sample.json" assert { type: "json" };
+import inputData from "./inputdata.json" assert { type: "json" };
 
 inputData.forEach((element, index) => {
-  var startTime = performance.now();
   stringMatch(element.stringText, element.pattern);
-  var endTime = performance.now();
-  console.log(`/n ${endTime - startTime}`);
 });
 
 function stringMatch(string, pattern) {
+  var startTime = performance.now();
   let patLen = pattern.length;
   let stringLen = string.length;
   let compareCount = 0;
@@ -27,4 +25,6 @@ function stringMatch(string, pattern) {
           "</br>"
       );
   }
+  var endTime = performance.now();
+  console.log(`/n ${endTime - startTime}`);
 }
