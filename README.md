@@ -2,4 +2,5 @@
 2. Go project folder.
 3. Run command "node Kmp.js" for KMP Algorithm.
 4. Run command "node brute-force.js" for brute-force Algorithm.
-   5 . Run command "node boyermoore.js" for boyermoore Algorithm.
+5. Run command "node boyermoore.js" for boyermoore Algorithm.
+6. Result , shows Run or execution time , index on which pattern matched, and no.of comparisions
