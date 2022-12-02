@@ -1,30 +1,37 @@
-import inputData from "./inputdata.json" assert { type: "json" };
-
-var startTime = performance.now();
+import inputData from "./sample.json" assert { type: "json" };
 
 inputData.forEach((element, index) => {
+  var startTime = performance.now();
   stringMatch(element.stringText, element.pattern);
+  var endTime = performance.now();
+  console.log(`/n ${endTime - startTime}`);
 });
 
 function stringMatch(string, pattern) {
-  let stringLen = string.length;
   let patLen = pattern.length;
-  console.log("inside function", stringLen, patLen);
-  //pattern loop
-  for (let _patindex = 0; _patindex <= stringLen - patLen; _patindex++) {
-    //pattern match logic in string and current index
-    for (let _strindex = 0; _strindex < patLen.length; _strindex++) {
-      if (string[_patindex + _strindex] != pattern[_patindex]) break;
-    }
-    if (_patindex == patLen) {
-      var endTime = performance.now();
+  let stringLen = string.length;
+  let compareCount = 0;
+  /* A loop to slide pat one by one */
+  for (let _patIndex = 0; _patIndex <= stringLen - patLen; _patIndex++) {
+    let _strindex;
+
+    /* For current index i, check for pattern
+        match */
+    for (_strindex = 0; _strindex < patLen; _strindex++)
+      if (string[_patIndex + _strindex] != pattern[_strindex]) {
+        compareCount += 1;
+        break;
+      }
+    // compareCount += 1;
+
+    // if pat[0...M-1] = txt[i, i+1, ...i+M-1]
+    if (_strindex == patLen)
       console.log(
-        "\n" +
-          `Given Pattern ${pattern} has been match at the index  ` +
-          _patindex +
-          `Execution time ${endTime - startTime} milliseconds` +
-          "\n"
+        "Pattern found at index " +
+          _patIndex +
+          "no of comparisions " +
+          (compareCount + patLen) +
+          "</br>"
       );
-    }
   }
 }

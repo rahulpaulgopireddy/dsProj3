@@ -1,6 +1,50 @@
 [
   {
+    "stringText": "test case",
+    "pattern": "test"
+  },
+  {
     "stringText": "ABABDABACDABABCABAB",
     "pattern": "ABABCABAB"
+  },
+  {
+    "stringText": "abracadabra",
+    "pattern": "rac"
+  },
+  {
+    "stringText": "jim jam gym",
+    "pattern": "jam"
+  },
+  {
+    "stringText": "test case",
+    "pattern": "test"
+  },
+  {
+    "stringText": "bluetooth head set",
+    "pattern": "head"
+  },
+  {
+    "stringText": "iphone smart phone",
+    "pattern": "art"
+  },
+  {
+    "stringText": "water inside  bottle",
+    "pattern": "side"
+  },
+  {
+    "stringText": "big brown table",
+    "pattern": "own"
+  },
+  {
+    "stringText": "not north part",
+    "pattern": "not"
+  },
+  {
+    "stringText": "fastest algo",
+    "pattern": "fast"
+  },
+  {
+    "stringText": "notice board",
+    "pattern": "not"
   }
 ]

@@ -1,11 +1,15 @@
-import inputData from "./inputdata.json" assert { type: "json" };
+import inputData from "./sample.json" assert { type: "json" };
 
 inputData.forEach((element, index) => {
+  var startTime = performance.now();
   KMPPatternSearch(element.stringText, element.pattern);
+  var endTime = performance.now();
+  console.log(`. Execution time ${endTime - startTime} milliseconds`);
 });
 
 function KMPPatternSearch(stringText, pattern) {
-  var startTime = performance.now();
+  var compareCount = 0;
+
   // index of stringText
   var i = 0;
   // index for the pattern
@@ -21,6 +25,7 @@ function KMPPatternSearch(stringText, pattern) {
 
   // search logic
   while (N - i >= M - j) {
+    compareCount++;
     // if the pattern matches with the text
     if (pattern.charAt(j) == stringText.charAt(i)) {
       //index of stringtext and pattern are increased
@@ -29,12 +34,11 @@ function KMPPatternSearch(stringText, pattern) {
     }
     // string match check , comparing length of the pattern with j which is the subset of the stringtext
     if (j == M) {
-      var endTime = performance.now();
       console.log(
         "\n" +
-          `Given Pattern ${pattern} has been match at the index  ` +
+          `Given Pattern "${pattern}" has been match at the index  ` +
           (i - j) +
-          `Execution time ${endTime - startTime} milliseconds` +
+          `. No.Of Comparisons taken ${compareCount}` +
           "\n"
       );
       // to continue the remaining of the string if its not the last index, specified from where j should start i.e 1 index before j
@@ -53,7 +57,6 @@ function KMPPatternSearch(stringText, pattern) {
 }
 
 function computeLpsTable(lpsArray, _pattern, _patternlen) {
-  console.log(lpsArray, _pattern, _patternlen);
   // previous lpslen
   var prLpsLen = 0;
   // according to algorithm index of the lps to considered
