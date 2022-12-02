@@ -1,11 +1,11 @@
 import inputData from "./inputdata.json" assert { type: "json" };
-console.log(inputData);
 
 inputData.forEach((element, index) => {
   KMPPatternSearch(element.stringText, element.pattern);
 });
 
 function KMPPatternSearch(stringText, pattern) {
+  var startTime = performance.now();
   // index of stringText
   var i = 0;
   // index for the pattern
@@ -29,10 +29,12 @@ function KMPPatternSearch(stringText, pattern) {
     }
     // string match check , comparing length of the pattern with j which is the subset of the stringtext
     if (j == M) {
+      var endTime = performance.now();
       console.log(
         "\n" +
           `Given Pattern ${pattern} has been match at the index  ` +
           (i - j) +
+          `Execution time ${endTime - startTime} milliseconds` +
           "\n"
       );
       // to continue the remaining of the string if its not the last index, specified from where j should start i.e 1 index before j
