@@ -1,12 +1,5 @@
 [
   {
-    "stringText": "test case",
-    "pattern": "test"
-  },
-  {
-    "stringText": "ABABDABACDABABCABAB",
-    "pattern": "ABABCABAB"
-  },
   {
     "stringText": "abracadabra",
     "pattern": "rac"
@@ -45,6 +38,6 @@
   },
   {
     "stringText": "notice board",
-    "pattern": "not"
+    "pattern": "ice"
   }
 ]
